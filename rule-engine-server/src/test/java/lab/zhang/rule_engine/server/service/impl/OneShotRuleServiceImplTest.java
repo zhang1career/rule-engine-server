@@ -23,7 +23,7 @@ import static org.junit.Assert.*;
 public class OneShotRuleServiceImplTest {
 
     @Resource
-    RuleService ruleService;
+    private RuleService ruleService;
 
     private String exp_age_greatThen_18;
 
