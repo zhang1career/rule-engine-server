@@ -1,6 +1,7 @@
-package lab.zhang.rule_engine.rest.controller;
+package lab.zhang.rule_engine.server.controller;
 
-import cn.hutool.core.util.StrUtil;
+import cn.hutool.core.util.NumberUtil;
+import lab.zhang.rule_engine.server.entity.Rule;
 import lab.zhang.rule_engine.server.model.calculator.Context;
 import lab.zhang.rule_engine.server.service.RuleService;
 import org.springframework.web.bind.annotation.*;
@@ -25,13 +26,19 @@ public class RuleController {
     @ResponseBody
     public Boolean eval(@RequestParam Map<String, Object> param) {
 
-        Object ruleObj = param.get("rule");
-        String ruleStr = StrUtil.toString(ruleObj);
+        Object ruleIdObj = param.get("rule_id");
+        long ruleId = NumberUtil.parseLong((String) ruleIdObj);
+
+        Rule rule = ruleService.findById(ruleId);
+        if (rule == null) {
+            return false;
+        }
+        String cond = rule.getCond();
 
         Context context = new Context();
         context.setParamMap(param);
 
-        Boolean result = ruleService.rule(ruleStr, context);
+        Boolean result = ruleService.calc(cond, context);
         return result;
     }
 

@@ -39,7 +39,7 @@ public class OneShotRuleServiceImplTest {
         Context context = new Context();
         context.putParam(paramAge, param20);
 
-        Boolean result = ruleService.rule(exp_age_greatThen_18, context);
+        Boolean result = ruleService.calc(exp_age_greatThen_18, context);
         assertTrue(result);
     }
 
@@ -50,7 +50,7 @@ public class OneShotRuleServiceImplTest {
         Context context = new Context();
         context.putParam(paramAge, param20);
 
-        Boolean result = ruleService.rule(exp_age_greatThen_18, context);
+        Boolean result = ruleService.calc(exp_age_greatThen_18, context);
         assertFalse(result);
     }
 

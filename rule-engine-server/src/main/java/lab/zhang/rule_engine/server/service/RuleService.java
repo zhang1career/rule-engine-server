@@ -1,5 +1,6 @@
 package lab.zhang.rule_engine.server.service;
 
+import lab.zhang.rule_engine.server.entity.Rule;
 import lab.zhang.rule_engine.server.model.calculator.Context;
 
 /**
@@ -7,5 +8,8 @@ import lab.zhang.rule_engine.server.model.calculator.Context;
  */
 public interface RuleService {
 
-    Boolean rule(String expressionStr, Context context);
+    Rule findById(long ruleId);
+
+
+    Boolean calc(String expressionStr, Context context);
 }

@@ -1,0 +1,10 @@
+server:
+  port: 10001
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/rule_engine?useSSL=false&autoReconnect=true&characterEncoding=utf8
+    username: zhangrj
+    password: nv7mGHm$7rrBPe90
+
