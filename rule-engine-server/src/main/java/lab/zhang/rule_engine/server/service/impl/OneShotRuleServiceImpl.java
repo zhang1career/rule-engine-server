@@ -1,9 +1,7 @@
 package lab.zhang.rule_engine.server.service.impl;
 
-import lab.zhang.rule_engine.server.entity.Rule;
 import lab.zhang.rule_engine.server.model.calculator.Context;
-import lab.zhang.rule_engine.server.model.compiler.ExpressionMeta;
-import lab.zhang.rule_engine.server.repository.RuleRepository;
+import lab.zhang.rule_engine.server.model.compiler.CompileMeta;
 import lab.zhang.rule_engine.server.service.CalculateService;
 import lab.zhang.rule_engine.server.service.CompileService;
 import lab.zhang.rule_engine.server.service.RuleService;
@@ -19,10 +17,7 @@ import javax.annotation.Resource;
 @Service
 public class OneShotRuleServiceImpl implements RuleService {
 
-    @Resource
-    private RuleRepository ruleRepository;
-
-    @Resource
+    @Resource(name = "shallowCompileServiceImpl")
     CompileService<Boolean> compileService;
 
     @Resource
@@ -30,14 +25,9 @@ public class OneShotRuleServiceImpl implements RuleService {
 
 
     @Override
-    public Rule findById(long ruleId) {
-        return ruleRepository.findRuleById(ruleId);
-    }
-
-    @Override
     public Boolean calc(String expressionStr, Context context) {
-        ExpressionMeta<Boolean> expressionMeta = compileService.compile(expressionStr);
-        Boolean result = calculateService.calculate(expressionMeta, context);
+        CompileMeta<Boolean> compileMeta = compileService.compile(expressionStr);
+        Boolean result = calculateService.calculate(compileMeta, context);
         return result;
     }
 }

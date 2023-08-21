@@ -12,26 +12,6 @@
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-
-        <spring-boot.version>2.3.4.RELEASE</spring-boot.version>
-
-        <apiguardian-api.version>1.1.2</apiguardian-api.version>
-        <caffeine.version>2.9.3</caffeine.version>
-        <fastjson.version>1.2.83</fastjson.version>
-        <groovy-all.version>2.4.21</groovy-all.version>
-        <gson.version>2.8.9</gson.version>
-        <guava.version>30.1.1-jre</guava.version>
-        <hutool.version>5.8.12</hutool.version>
-        <junit.version>4.13.2</junit.version>
-        <junit-jupiter-api.version>5.6.2</junit-jupiter-api.version>
-        <lombok.version>1.18.22</lombok.version>
-        <mybatis-plus.version>3.3.2</mybatis-plus.version>
-        <mysql-connector-java.version>8.0.28</mysql-connector-java.version>
-        <slf4j-api.version>1.7.36</slf4j-api.version>
-        <spock-core.version>2.2-groovy-4.0</spock-core.version>
-        <zhangtool.version>1.0.0-SNAPSHOT</zhangtool.version>
-
-        <druid-spring.version>1.1.24</druid-spring.version>
     </properties>
 
     <dependencies>
@@ -39,7 +19,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter</artifactId>
-            <version>${spring-boot.version}</version>
             <exclusions>
                 <exclusion>
                     <artifactId>slf4j-api</artifactId>
@@ -52,7 +31,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-data-jpa</artifactId>
-            <version>${spring-boot.version}</version>
             <exclusions>
                 <exclusion>
                     <artifactId>slf4j-api</artifactId>
@@ -67,12 +45,10 @@
         <dependency>
             <groupId>mysql</groupId>
             <artifactId>mysql-connector-java</artifactId>
-            <version>${mysql-connector-java.version}</version>
         </dependency>
         <dependency>
             <groupId>com.baomidou</groupId>
             <artifactId>mybatis-plus-boot-starter</artifactId>
-            <version>${mybatis-plus.version}</version>
             <exclusions>
                 <exclusion>
                     <artifactId>slf4j-api</artifactId>
@@ -103,7 +79,6 @@
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>druid-spring-boot-starter</artifactId>
-            <version>${druid-spring.version}</version>
             <exclusions>
                 <exclusion>
                     <artifactId>spring-boot-autoconfigure</artifactId>
@@ -120,19 +95,16 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-cache</artifactId>
-            <version>${spring-boot.version}</version>
         </dependency>
         <dependency>
             <groupId>com.github.ben-manes.caffeine</groupId>
             <artifactId>caffeine</artifactId>
-            <version>${caffeine.version}</version>
         </dependency>
 
         <!-- util -->
         <dependency>
             <groupId>lab.zhang</groupId>
             <artifactId>zhangtool</artifactId>
-            <version>${zhangtool.version}</version>
             <exclusions>
                 <exclusion>
                     <groupId>org.projectlombok</groupId>
@@ -187,7 +159,6 @@
         <dependency>
             <groupId>com.google.guava</groupId>
             <artifactId>guava</artifactId>
-            <version>${guava.version}</version>
             <exclusions>
                 <exclusion>
                     <artifactId>checker-qual</artifactId>
@@ -202,40 +173,40 @@
         <dependency>
             <groupId>cn.hutool</groupId>
             <artifactId>hutool-all</artifactId>
-            <version>${hutool.version}</version>
         </dependency>
 
         <!-- codec -->
         <dependency>
             <groupId>com.google.code.gson</groupId>
             <artifactId>gson</artifactId>
-            <version>${gson.version}</version>
         </dependency>
         <dependency>
             <groupId>com.alibaba</groupId>
             <artifactId>fastjson</artifactId>
-            <version>${fastjson.version}</version>
+        </dependency>
+
+        <!-- script -->
+        <dependency>
+            <groupId>org.codehaus.groovy</groupId>
+            <artifactId>groovy-all</artifactId>
         </dependency>
 
         <!-- misc -->
         <dependency>
             <groupId>org.apiguardian</groupId>
             <artifactId>apiguardian-api</artifactId>
-            <version>${apiguardian-api.version}</version>
         </dependency>
 
         <!-- annotation -->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>${lombok.version}</version>
         </dependency>
 
         <!-- log -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-logging</artifactId>
-            <version>${spring-boot.version}</version>
             <exclusions>
                 <exclusion>
                     <artifactId>slf4j-api</artifactId>
@@ -246,14 +217,12 @@
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>${slf4j-api.version}</version>
         </dependency>
 
         <!-- test -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
-            <version>${spring-boot.version}</version>
             <scope>test</scope>
             <exclusions>
                 <exclusion>
@@ -289,18 +258,15 @@
         <dependency>
             <groupId>org.spockframework</groupId>
             <artifactId>spock-core</artifactId>
-            <version>${spock-core.version}</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>${junit.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.junit.jupiter</groupId>
             <artifactId>junit-jupiter-api</artifactId>
-            <version>${junit-jupiter-api.version}</version>
             <scope>test</scope>
             <exclusions>
                 <exclusion>
@@ -316,13 +282,7 @@
         <dependency>
             <groupId>org.junit.platform</groupId>
             <artifactId>junit-platform-engine</artifactId>
-            <version>1.9.0</version>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.codehaus.groovy</groupId>
-            <artifactId>groovy-all</artifactId>
-            <version>${groovy-all.version}</version>
         </dependency>
     </dependencies>
 

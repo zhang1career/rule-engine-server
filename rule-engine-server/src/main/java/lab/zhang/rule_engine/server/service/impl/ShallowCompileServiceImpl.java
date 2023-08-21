@@ -8,7 +8,7 @@ import com.google.gson.JsonParser;
 import lab.zhang.rule_engine.server.enums.vo.VoNodeOpCateEnum;
 import lab.zhang.rule_engine.server.enums.vo.VoNodeTypeEnum;
 import lab.zhang.rule_engine.server.model.ast.TreeNode;
-import lab.zhang.rule_engine.server.model.compiler.ExpressionMeta;
+import lab.zhang.rule_engine.server.model.compiler.CompileMeta;
 import lab.zhang.rule_engine.server.service.CompileService;
 import org.springframework.stereotype.Service;
 
@@ -16,10 +16,13 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
+ * 浅表编译
+ * 未经词法分析、语法分析
+ *
  * @author zhangrj
  */
 @Service
-public class CompileServiceImpl<R> implements CompileService<R> {
+public class ShallowCompileServiceImpl<R> implements CompileService<R> {
 
     private static final String NAME = "name";
 
@@ -51,14 +54,14 @@ public class CompileServiceImpl<R> implements CompileService<R> {
      * @return 表达式
      */
     @Override
-    public ExpressionMeta<R> compile(String expressionStr) {
+    public CompileMeta<R> compile(String expressionStr) {
         // tree node
         TreeNode<?, ?> treeNode = parseJson(expressionStr);
         // expression
-        ExpressionMeta<R> expressionMeta = new ExpressionMeta<>();
-        expressionMeta.setTreeNode((TreeNode<?, R>) treeNode);
+        CompileMeta<R> compileMeta = new CompileMeta<>();
+        compileMeta.setTreeNode((TreeNode<?, R>) treeNode);
 
-        return expressionMeta;
+        return compileMeta;
     }
 
 

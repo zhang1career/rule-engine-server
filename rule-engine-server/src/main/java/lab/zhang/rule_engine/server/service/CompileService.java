@@ -1,6 +1,6 @@
 package lab.zhang.rule_engine.server.service;
 
-import lab.zhang.rule_engine.server.model.compiler.ExpressionMeta;
+import lab.zhang.rule_engine.server.model.compiler.CompileMeta;
 
 /**
  * 编译
@@ -9,5 +9,5 @@ import lab.zhang.rule_engine.server.model.compiler.ExpressionMeta;
  */
 public interface CompileService<R> {
 
-    ExpressionMeta<R> compile(String expressionStr);
+    CompileMeta<R> compile(String expressionStr);
 }

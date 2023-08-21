@@ -1,7 +1,7 @@
 package lab.zhang.rule_engine.server.service;
 
 import lab.zhang.rule_engine.server.model.calculator.Context;
-import lab.zhang.rule_engine.server.model.compiler.ExpressionMeta;
+import lab.zhang.rule_engine.server.model.compiler.CompileMeta;
 
 /**
  * 计算
@@ -10,5 +10,5 @@ import lab.zhang.rule_engine.server.model.compiler.ExpressionMeta;
  */
 public interface CalculateService<R> {
 
-    R calculate(ExpressionMeta<R> expressionMeta, Context context);
+    R calculate(CompileMeta<R> compileMeta, Context context);
 }

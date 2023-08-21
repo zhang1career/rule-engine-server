@@ -12,7 +12,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 整型加法
+ * 加法
+ * 整型
  *
  * @author zhangrj
  */

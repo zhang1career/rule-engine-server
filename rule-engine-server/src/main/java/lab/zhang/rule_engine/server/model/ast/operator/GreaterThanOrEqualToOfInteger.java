@@ -1,7 +1,6 @@
 package lab.zhang.rule_engine.server.model.ast.operator;
 
 import lab.zhang.rule_engine.server.enums.ast.AccessTypeEnum;
-import lab.zhang.rule_engine.server.model.ast.TreeNode;
 import lab.zhang.rule_engine.server.model.calculator.Context;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
@@ -11,7 +10,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 大于
+ * 大于等于
  * 整型
  *
  * @author zhangrj
@@ -19,10 +18,10 @@ import java.util.List;
 @Data
 @EqualsAndHashCode(callSuper = true)
 @Slf4j
-public class GreaterThanOfInteger extends Operator<Boolean> {
+public class GreaterThanOrEqualToOfInteger extends Operator<Boolean> {
 
-    public static GreaterThanOfInteger of(String name, Object value) {
-        GreaterThanOfInteger node = new GreaterThanOfInteger();
+    public static GreaterThanOrEqualToOfInteger of(String name, Object value) {
+        GreaterThanOrEqualToOfInteger node = new GreaterThanOrEqualToOfInteger();
         node.setName(name);
         node.setValue(value);
         node.setAccessType(AccessTypeEnum.OPERATOR);
@@ -53,6 +52,6 @@ public class GreaterThanOfInteger extends Operator<Boolean> {
         Integer param0 = (Integer) paramObj0;
         Integer param1 = (Integer) paramObj1;
 
-        return param0 > param1;
+        return param0 >= param1;
     }
 }

@@ -5,13 +5,13 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 /**
- * 表达式元数据
+ * 编译后元数据
  *
  * @author zhangrj
  */
 @NoArgsConstructor
 @Data
-public class ExpressionMeta<R> {
+public class CompileMeta<R> {
 
     /**
      * ast

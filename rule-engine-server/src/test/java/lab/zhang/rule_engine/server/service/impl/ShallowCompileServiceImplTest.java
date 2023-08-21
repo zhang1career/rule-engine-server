@@ -1,7 +1,7 @@
 package lab.zhang.rule_engine.server.service.impl;
 
 import lab.zhang.rule_engine.server.RuleEngineServerTestApplication;
-import lab.zhang.rule_engine.server.model.compiler.ExpressionMeta;
+import lab.zhang.rule_engine.server.model.compiler.CompileMeta;
 import lab.zhang.rule_engine.server.service.CompileService;
 import org.junit.Before;
 import org.junit.Test;
@@ -19,7 +19,7 @@ import javax.annotation.Resource;
         webEnvironment = SpringBootTest.WebEnvironment.NONE
 )
 @TestPropertySource(locations = "classpath:test.properties")
-public class CompileServiceImplTest {
+public class ShallowCompileServiceImplTest {
 
     @Resource
     private CompileService<Boolean> compileServiceForBool;
@@ -34,7 +34,7 @@ public class CompileServiceImplTest {
 
     @Test
     public void test_compile() throws Exception {
-        ExpressionMeta<Boolean> expMeta = compileServiceForBool.compile(exp_age_greatThen_18);
+        CompileMeta<Boolean> expMeta = compileServiceForBool.compile(exp_age_greatThen_18);
         System.out.println(expMeta);
     }
 }
